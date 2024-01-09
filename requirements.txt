@@ -12,3 +12,4 @@ markdown==3.3.7
 pypdf
 openxlab
 huggingface_hub
+sqlite==3.35.0
