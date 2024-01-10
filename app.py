@@ -129,7 +129,7 @@ with block as demo:
         with gr.Column(scale=15):
             # 展示的页面标题
             gr.Markdown("""<h1><center>InternLM</center></h1>
-                <center>牛跛行知识问答</center>
+                <center>畜禽知识问答</center>
                 """)
 
     with gr.Row():
