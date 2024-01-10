@@ -14,14 +14,14 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 from openxlab.model import download
 import openxlab
-openxlab.login(ak='', sk='') 
+openxlab.login(ak='k2kxnxb5j7dewd9yvqzl', sk='ozx4r5e6oedlwba8epoxnxenjapmm0dkn21jyvnx') 
 download(model_repo='OpenLMLab/InternLM-chat-7b',output='./internlm-chat-7b')
 
 from openxlab.dataset import get
-get(dataset_repo='Xpg12138/pigandcow', target_path='data_base/vector_db/') # 数据集下载
+get(dataset_repo='Xpg12138/pigandcow', target_path='./data_base/vector_db/') # 数据集下载
 
 # 定义原始文件路径和新文件名
-old_file = "data_base/vector_db/pig_cow/chroma.pkl"
+old_file = "./data_base/vector_db/pigandcow/pig_cow/chroma.pkl"
 new_name = "chroma.sqlite3"
  
 # 构建新文件路径
@@ -42,7 +42,7 @@ def load_chain():
     embeddings = HuggingFaceEmbeddings(model_name="./sentence-transformer")
 
     # 向量数据库持久化路径
-    persist_directory = 'data_base/vector_db/pig_cow'
+    persist_directory = 'data_base/vector_db/pigandcow/pig_cow'
 
     # 加载数据库
     vectordb = Chroma(
