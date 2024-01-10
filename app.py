@@ -14,7 +14,7 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 from openxlab.model import download
 import openxlab
-openxlab.login(ak='k2kxnxb5j7dewd9yvqzl', sk='ozx4r5e6oedlwba8epoxnxenjapmm0dkn21jyvnx') 
+openxlab.login(ak='', sk='') 
 download(model_repo='OpenLMLab/InternLM-chat-7b',output='./internlm-chat-7b')
 
 from openxlab.dataset import get
