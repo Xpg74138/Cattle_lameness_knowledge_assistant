@@ -13,9 +13,7 @@ from LLM import InternLM_LLM
 from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 from openxlab.model import download
-
-from openxlab.model import download 
-download(model_repo='OpenLMLab/InternLM-chat-7b')
+download(model_repo='OpenLMLab/InternLM-chat-7b',output='./internlm-chat-7b')
 
 def load_chain():
     # 加载问答链
@@ -32,7 +30,7 @@ def load_chain():
     )
 
     # 加载自定义 LLM
-    llm = InternLM_LLM(model_path = "OpenLMLab/internlm-chat-7b")
+    llm = InternLM_LLM(model_path = "./internlm-chat-7b")
 
     # 定义一个 Prompt Template
     template = """使用以下上下文来回答最后的问题。如果你不知道答案，就说你不知道，不要试图编造答
