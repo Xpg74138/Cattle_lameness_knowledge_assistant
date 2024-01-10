@@ -15,7 +15,7 @@ from langchain.chains import RetrievalQA
 from openxlab.model import download
 import openxlab
 openxlab.login(ak='k2kxnxb5j7dewd9yvqzl', sk='ozx4r5e6oedlwba8epoxnxenjapmm0dkn21jyvnx') 
-download(model_repo='OpenLMLab/InternLM-chat-7b',output='./internlm-chat-7b')
+
 
 from openxlab.dataset import get
 get(dataset_repo='Xpg12138/pigandcow', target_path='./data_base/vector_db/') # 数据集下载
@@ -64,6 +64,7 @@ except FileNotFoundError:
 except Exception as e:
     print("发生错误: ", str(e))
     
+download(model_repo='OpenLMLab/InternLM-chat-7b',output='./internlm-chat-7b')
 def load_chain():
     # 加载问答链
     # 定义 Embeddings
