@@ -13,15 +13,36 @@ from LLM import InternLM_LLM
 from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 from openxlab.model import download
+import openxlab
+openxlab.login(ak='k2kxnxb5j7dewd9yvqzl', sk='ozx4r5e6oedlwba8epoxnxenjapmm0dkn21jyvnx') 
 download(model_repo='OpenLMLab/InternLM-chat-7b',output='./internlm-chat-7b')
 
+from openxlab.dataset import get
+get(dataset_repo='Xpg12138/pigandcow', target_path='data_base/vector_db/') # 数据集下载
+
+# 定义原始文件路径和新文件名
+old_file = "data_base/vector_db/pig_cow/chroma.pkl"
+new_name = "chroma.sqlite3"
+ 
+# 构建新文件路径
+new_file = os.path.join(os.path.dirname(old_file), new_name)
+ 
+try:
+    # 重命名文件
+    os.rename(old_file, new_file)
+    print("文件已成功更名为", new_name)
+except FileNotFoundError:
+    print("未找到指定的文件")
+except Exception as e:
+    print("发生错误: ", str(e))
+    
 def load_chain():
     # 加载问答链
     # 定义 Embeddings
     embeddings = HuggingFaceEmbeddings(model_name="./sentence-transformer")
 
     # 向量数据库持久化路径
-    persist_directory = 'data_base/vector_db/lameness'
+    persist_directory = 'data_base/vector_db/pig_cow'
 
     # 加载数据库
     vectordb = Chroma(
