@@ -49,7 +49,7 @@ folder_path = './'
 print_tree(folder_path)
 
 # 定义原始文件路径和新文件名
-old_file = "./data_base/vector_db/pigandcow/pig_cow/chroma.pkl"
+old_file = "./data_base/vector_db/Xpg12138___pigandcow/pig_cow/chroma.pkl"
 new_name = "chroma.sqlite3"
  
 # 构建新文件路径
@@ -71,7 +71,7 @@ def load_chain():
     embeddings = HuggingFaceEmbeddings(model_name="./sentence-transformer")
 
     # 向量数据库持久化路径
-    persist_directory = 'data_base/vector_db/pigandcow/pig_cow'
+    persist_directory = './data_base/vector_db/Xpg12138___pigandcow/pig_cow'
 
     # 加载数据库
     vectordb = Chroma(
